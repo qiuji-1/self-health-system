@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kmbeast.mapper.RecipeMapper">
+
+
+    <select id="list" resultMap="BaseResultMap">
+        SELECT r.id,
+        r.name,
+        r.cover,
+        r.is_audit,
+        r.is_public,
+        r.create_time,
+        u.username,
+        u.avatar
+        FROM recipe r
+        LEFT JOIN user u ON u.id = r.user_id
+        <where>
+            <if test="userId != null">
+                AND r.user_id = #{userId}
+            </if>
+            <if test="typeId != null">
+                AND r.type_id = #{typeId}
+            </if>
+            <if test="isAudit != null">
+                AND r.is_audit = #{isAudit}
+            </if>
+            <if test="isPublic != null">
+                AND r.is_public = #{isPublic}
+            </if>
+            <if test="name != null and name != ''">
+                AND r.name LIKE concat('%',#{name},'%')
+            </if>
+            <if test="startTime != null and endTime != null">
+                AND r.create_time BETWEEN #{startTime} AND #{endTime}
+            </if>
+            <if test="ids != null and ids.size() > 0">
+                AND r.id IN
+                <foreach collection="ids" item="id" index="index" separator="," open="(" close=")">
+                    #{id}
+                </foreach>
+            </if>
+        </where>
+        <if test="current != null and size != null">
+            LIMIT #{current},#{size}
+        </if>
+    </select>
+
+    <select id="listPageCount" resultType="integer">
+        SELECT COUNT(*)
+        FROM recipe r
+        <where>
+            <if test="userId != null">
+                AND r.user_id = #{userId}
+            </if>
+            <if test="typeId != null">
+                AND r.type_id = #{typeId}
+            </if>
+            <if test="isAudit != null">
+                AND r.is_audit = #{isAudit}
+            </if>
+            <if test="isPublic != null">
+                AND r.is_public = #{isPublic}
+            </if>
+            <if test="name != null and name != ''">
+                AND r.name LIKE concat('%',#{name},'%')
+            </if>
+            <if test="startTime != null and endTime != null">
+                AND r.create_time BETWEEN #{startTime} AND #{endTime}
+            </if>
+            <if test="ids != null and ids.size() > 0">
+                AND r.id IN
+                <foreach collection="ids" item="id" index="index" separator="," open="(" close=")">
+                    #{id}
+                </foreach>
+            </if>
+        </where>
+    </select>
+
+    <select id="getRecipeVOById" resultType="com.kmbeast.pojo.vo.RecipeVO">
+        SELECT r.id,
+               r.name,
+               r.type_id,
+               r.cover,
+               r.content,
+               r.is_audit,
+               r.is_public,
+               r.create_time,
+               u.username,
+               u.avatar
+        FROM recipe r
+        LEFT JOIN user u ON u.id = r.user_id
+        WHERE r.id = #{id}
+    </select>
+
+    <select id="listIds" resultType="java.lang.Integer">
+        SELECT id FROM recipe WHERE is_public = 1  AND is_audit = 1
+    </select>
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.kmbeast.pojo.vo.RecipeListItemVO">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="cover" property="cover"/>
+        <result column="username" property="username"/>
+        <result column="avatar" property="avatar"/>
+        <result column="is_audit" property="isAudit"/>
+        <result column="is_public" property="isPublic"/>
+    </resultMap>
+
+</mapper>
