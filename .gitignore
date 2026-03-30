@@ -1,2 +1,100 @@
+# ===== IDE配置文件 =====
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
 
-temp
+# Eclipse
+.project
+.classpath
+.settings/
+.metadata/
+
+# VS Code
+.vscode/
+
+# NetBeans
+nbproject/
+nbbuild/
+nbdist/
+
+# ===== Java编译输出 =====
+# 编译后的class文件
+*.class
+
+# 输出目录
+out/
+target/
+build/
+bin/
+
+# ===== 打包文件 =====
+# JAR包
+*.jar
+*.war
+*.ear
+*.nar
+
+# ===== 日志文件 =====
+*.log
+logs/
+
+# ===== 系统文件 =====
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Linux
+*~
+
+# ===== 临时文件 =====
+# 临时文件夹
+temp/
+
+# 序列化测试文件
+*.ser
+
+# 临时测试文件
+*.tmp
+*.temp
+*.bak
+
+# ===== 敏感信息 =====
+# 配置文件（包含密码、密钥等）
+application-prod.properties
+application-prod.yml
+*.secret
+*.key
+*.pem
+
+# ===== 依赖目录 =====
+# Maven
+.mvn/
+
+# Gradle
+.gradle/
+
+# Node.js (如果有前端项目)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ===== 数据库文件 =====
+*.db
+*.sqlite
+*.sql.bak
+
+# ===== 其他 =====
+# 打包压缩文件
+*.zip
+*.tar.gz
+*.rar
