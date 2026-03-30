@@ -4,8 +4,6 @@ import com.kmbeast.pojo.api.Result;
 import com.kmbeast.pojo.dto.EvaluationsQueryDto;
 import com.kmbeast.pojo.entity.Evaluations;
 
-import java.util.List;
-
 /**
  * 评论服务接口
  */

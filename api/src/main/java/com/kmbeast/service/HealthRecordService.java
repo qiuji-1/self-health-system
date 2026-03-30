@@ -6,7 +6,6 @@ import com.kmbeast.pojo.dto.HealthRecordQueryDto;
 import com.kmbeast.pojo.entity.HealthRecord;
 import com.kmbeast.pojo.vo.HealthRecordLineChartVO;
 import com.kmbeast.pojo.vo.HealthRecordVO;
-import com.kmbeast.pojo.vo.OptionsVO;
 
 import java.util.List;
 

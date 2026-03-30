@@ -1,6 +1,5 @@
 package com.kmbeast.service.impl;
 
-import com.baomidou.mybatisplus.core.toolkit.Assert;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.kmbeast.context.LocalThreadHolder;
 import com.kmbeast.mapper.HealthModelMapper;
@@ -155,7 +154,6 @@ public class HealthModelServiceImpl extends ServiceImpl<HealthModelMapper, Healt
      */
     @Override
     public Result<String> delete(Integer id) {
-        HealthModel healthModel = getById(id);
         // 公共模组删除权限（为了确保功能的完整使用，暂时不支持删除公共模组）
         //AssertUtils.isFalse(Objects.equals(healthModel.getIsGlobal(), IsGlobalEnum.PUBLIC.getStatus()), "删除公共模组可能会影响系统其他功能板块，暂时不支持公共模组的删除，祝您生活愉快");
         // 私人模组删除权限

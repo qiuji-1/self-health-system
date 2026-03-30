@@ -2,13 +2,9 @@ package com.kmbeast.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.kmbeast.pojo.dto.HealthModelQueryDto;
-import com.kmbeast.pojo.dto.HealthNewsQueryDto;
 import com.kmbeast.pojo.entity.HealthModel;
-import com.kmbeast.pojo.entity.HealthNews;
 import com.kmbeast.pojo.vo.HealthModelCountVO;
 import com.kmbeast.pojo.vo.HealthModelToolTipVO;
-import com.kmbeast.pojo.vo.HealthNewsListVO;
-import com.kmbeast.pojo.vo.OptionsVO;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 

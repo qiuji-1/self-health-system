@@ -9,13 +9,11 @@ import com.kmbeast.pojo.api.Result;
 import com.kmbeast.pojo.dto.EvaluationsQueryDto;
 import com.kmbeast.pojo.entity.Evaluations;
 import com.kmbeast.pojo.entity.EvaluationsUpvote;
-import com.kmbeast.pojo.entity.User;
 import com.kmbeast.pojo.vo.CommentChildVO;
 import com.kmbeast.pojo.vo.CommentParentVO;
 import com.kmbeast.pojo.vo.EvaluationsVO;
 import com.kmbeast.service.EvaluationsService;
 import com.kmbeast.utils.AhoCorasickFilter;
-import com.kmbeast.utils.AssertUtils;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -57,7 +55,6 @@ public class EvaluationsServiceImpl implements EvaluationsService {
         // ====================结束======================================
         evaluations.setContent(filteredContent); // 将过滤后的敏感词替换原始文本内容
         evaluations.setCommenterId(LocalThreadHolder.getUserId());
-        User user = userMapper.getUserById(LocalThreadHolder.getUserId());
         evaluations.setCreateTime(LocalDateTime.now());
         evaluationsMapper.save(evaluations);
         return ApiResult.success("评论成功");
