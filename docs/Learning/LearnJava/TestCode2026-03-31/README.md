@@ -18,6 +18,9 @@
 | [Question10_IOStream.java](Question10_IOStream.java) | I/O流使用演示 |
 | [Question11_PrimitiveTypes.java](Question11_PrimitiveTypes.java) | 基本数据类型演示 |
 | [Question12_AutoBoxing.java](Question12_AutoBoxing.java) | 自动拆箱和装箱演示 |
+| [Question13_Inheritance.java](Question13_Inheritance.java) | 继承机制演示 |
+| [Question14_AccessModifiers.java](Question14_AccessModifiers.java) | 访问修饰符演示 |
+| [Question15_StaticInstanceMethod.java](Question15_StaticInstanceMethod.java) | 静态方法和实例方法演示 |
 
 
 
