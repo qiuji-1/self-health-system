@@ -17,6 +17,10 @@
 | 4 | [Question04_Channel.java](Question04_Channel.java) | 什么是 Channel（NIO 核心组件） |
 | 5 | [Question05_Selector.java](Question05_Selector.java) | 什么是 Selector（NIO 事件监听组件） |
 | 6 | [Question06_FloatComparison.java](Question06_FloatComparison.java) | Float 经过操作后的相等判断 |
+| 7 | [Question07_ObjectTypes.java](Question07_ObjectTypes.java) | PO、VO、BO、DTO、DAO、POJO 的区别 |
+| 8 | [Question08_ExceptionError.java](Question08_ExceptionError.java) | Java 中 Exception 和 Error 的区别 |
+| 9 | [Question09_Polymorphism.java](Question09_Polymorphism.java) | 什么是 Java 的多态特性 |
+| 10 | [Question10_ParameterPassing.java](Question10_ParameterPassing.java) | Java 中的参数传递是按值还是按引用 |
 
 ## 🚀 如何使用
 
