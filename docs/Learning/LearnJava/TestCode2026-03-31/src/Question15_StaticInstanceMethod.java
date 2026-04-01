@@ -90,10 +90,10 @@ class Counter {
  * 实例方法示例：用户类
  * 特点：需要维护用户状态
  */
-class User {
+class User15 {
     private String name;  // 实例变量
     
-    public User(String name) {
+    public User15(String name) {
         this.name = name;
     }
     
@@ -202,11 +202,11 @@ public class Question15_StaticInstanceMethod {
         System.out.println("   说明：每个对象有自己的实例变量\n");
         
         // 使用实例方法：User
-        User user = new User("张三");
-        System.out.println("   User.getName() = " + user.getName());
+        User15 user = new User15("张三");
+        System.out.println("   User15.getName() = " + user.getName());
         user.setName("李四");
-        System.out.println("   User.setName(\"李四\")");
-        System.out.println("   User.getName() = " + user.getName() + "\n");
+        System.out.println("   User15.setName(\"李四\")");
+        System.out.println("   User15.getName() = " + user.getName() + "\n");
         
         // ==================== 混合方法演示 ====================
         System.out.println("3. 混合方法演示：");

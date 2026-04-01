@@ -8,15 +8,15 @@ public class Question03_Static {
         System.out.println("=== 静态变量 vs 实例变量 ===\n");
         
         // 创建两个学生
-        Student s1 = new Student("张三");
-        Student s2 = new Student("李四");
+        Student03 s1 = new Student03("张三");
+        Student03 s2 = new Student03("李四");
         
         System.out.println("s1.name: " + s1.name);
         System.out.println("s2.name: " + s2.name);
-        System.out.println("Student.count: " + Student.count);  // 静态变量用类名访问
+        System.out.println("Student03.count: " + Student03.count);  // 静态变量用类名访问
         
         System.out.println("\n=== 静态方法调用 ===\n");
-        Student.showCount();  // 静态方法用类名调用
+        Student03.showCount();  // 静态方法用类名调用
         
         System.out.println("\n=== 静态方法限制 ===\n");
         System.out.println("静态方法：");
@@ -30,7 +30,7 @@ public class Question03_Static {
     }
 }
 
-class Student {
+class Student03 {
     String name;           // 实例变量：每个对象独有
     static int count = 0;  // 静态变量：所有对象共享
     
@@ -39,7 +39,7 @@ class Student {
         System.out.println("静态代码块执行：类被加载了");
     }
     
-    public Student(String name) {
+    public Student03(String name) {
         this.name = name;
         count++;  // 每创建一个学生，count+1
         System.out.println("创建学生：" + name);

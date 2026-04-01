@@ -8,38 +8,38 @@ public class Question13_Inheritance {
         System.out.println("=== 继承的基本概念 ===\n");
         
         // 创建子类对象
-        Dog dog = new Dog("旺财");
+        Dog13 dog = new Dog13("旺财");
         dog.eat();   // 调用继承的方法
         dog.bark();  // 调用自己的方法
         
         System.out.println("\n=== 构造方法的执行顺序 ===\n");
         
-        Cat cat = new Cat("咪咪", 3);
+        Cat13 cat = new Cat13("咪咪", 3);
         System.out.println("猫的名字：" + cat.getName());
         System.out.println("猫的年龄：" + cat.getAge());
         
         System.out.println("\n=== 访问权限演示 ===\n");
         
-        Son son = new Son();
+        Son13 son = new Son13();
         son.accessFields();
         
         System.out.println("\n=== 继承链 ===\n");
         
         System.out.println("Java只支持单继承，但可以多层继承：");
-        System.out.println("  Animal → Dog → GoldenRetriever");
+        System.out.println("  Animal13 → Dog13 → GoldenRetriever13");
         
-        GoldenRetriever gr = new GoldenRetriever("大黄");
-        gr.eat();      // Animal的方法
-        gr.bark();     // Dog的方法
-        gr.fetch();    // GoldenRetriever的方法
+        GoldenRetriever13 gr = new GoldenRetriever13("大黄");
+        gr.eat();      // Animal13的方法
+        gr.bark();     // Dog13的方法
+        gr.fetch();    // GoldenRetriever13的方法
         
         System.out.println("\n=== 方法重写 ===\n");
         
-        Animal animal1 = new Animal("动物");
-        Animal animal2 = new Dog("小狗");
+        Animal13 animal1 = new Animal13("动物");
+        Animal13 animal2 = new Dog13("小狗");
         
-        animal1.sound();  // Animal的声音
-        animal2.sound();  // Dog重写后的声音（多态）
+        animal1.sound();  // Animal13的声音
+        animal2.sound();  // Dog13重写后的声音（多态）
         
         System.out.println("\n=== 继承 vs 组合 ===\n");
         
@@ -52,18 +52,18 @@ public class Question13_Inheritance {
         
         // 陷阱1：静态方法不参与多态
         System.out.println("陷阱1：静态方法不参与多态");
-        Father f = new Son();
-        f.staticMethod();  // 输出Father的静态方法
+        Father13 f = new Son13();
+        f.staticMethod();  // 输出Father13的静态方法
         
         // 陷阱2：字段没有多态
         System.out.println("\n陷阱2：字段没有多态");
-        Father f2 = new Son();
-        System.out.println("  Father引用指向Son对象");
-        System.out.println("  f2.name = " + f2.name);  // Father的字段
+        Father13 f2 = new Son13();
+        System.out.println("  Father13引用指向Son13对象");
+        System.out.println("  f2.name = " + f2.name);  // Father13的字段
         
-        Son s = new Son();
-        System.out.println("  Son对象");
-        System.out.println("  s.name = " + s.name);  // Son的字段
+        Son13 s = new Son13();
+        System.out.println("  Son13对象");
+        System.out.println("  s.name = " + s.name);  // Son13的字段
         
         System.out.println("\n=== 最佳实践 ===\n");
         
@@ -76,16 +76,16 @@ public class Question13_Inheritance {
 }
 
 // ========== 父类 ==========
-class Animal {
+class Animal13 {
     protected String name;
     
     // 无参构造
-    public Animal() {
+    public Animal13() {
         System.out.println("  Animal无参构造");
     }
     
     // 带参构造
-    public Animal(String name) {
+    public Animal13(String name) {
         System.out.println("  Animal带参构造：" + name);
         this.name = name;
     }
@@ -104,8 +104,8 @@ class Animal {
 }
 
 // ========== 子类1 ==========
-class Dog extends Animal {
-    public Dog(String name) {
+class Dog13 extends Animal13 {
+    public Dog13(String name) {
         super(name);  // 调用父类构造方法
         System.out.println("  Dog构造：" + name);
     }
@@ -121,10 +121,10 @@ class Dog extends Animal {
 }
 
 // ========== 子类2（演示构造顺序）==========
-class Cat extends Animal {
+class Cat13 extends Animal13 {
     private int age;
     
-    public Cat(String name, int age) {
+    public Cat13(String name, int age) {
         super(name);  // 必须第一行
         this.age = age;
         System.out.println("  Cat构造：" + name + ", " + age + "岁");
@@ -136,8 +136,8 @@ class Cat extends Animal {
 }
 
 // ========== 多层继承 ==========
-class GoldenRetriever extends Dog {
-    public GoldenRetriever(String name) {
+class GoldenRetriever13 extends Dog13 {
+    public GoldenRetriever13(String name) {
         super(name);
         System.out.println("  GoldenRetriever构造：" + name);
     }
@@ -148,7 +148,7 @@ class GoldenRetriever extends Dog {
 }
 
 // ========== 访问权限演示 ==========
-class Father {
+class Father13 {
     public int publicField = 1;
     protected int protectedField = 2;
     int defaultField = 3;
@@ -161,7 +161,7 @@ class Father {
     public String name = "Father";
 }
 
-class Son extends Father {
+class Son13 extends Father13 {
     public String name = "Son";
     
     public void accessFields() {

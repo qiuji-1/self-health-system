@@ -21,13 +21,13 @@
  * - Java 8+接口可以有默认方法（default method）
  * 
  * 【题目跳转】
- * → [第1题：序列化](Question01_Serialization.java)
- * → [第2题：Java优势](Question02_JavaAdvantages.java)
- * → [第4题：方法重载重写](Question04_MethodOverloadOverride.java)
- * → [第5题：Java 25新特性](Question05_Java25Features.java)
- * → [第6题：Java 11新特性](Question06_Java11Features.java)
- * → [第7题：Java 17新特性](Question07_Java17Features.java)
- * → [第8题：Java 21新特性](Question08_Java21Features.java)
+ * @see Question01_Serialization 第1题：序列化
+ * @see Question02_JavaAdvantages 第2题：Java优势
+ * @see Question04_MethodOverloadOverride 第4题：方法重载重写
+ * @see Question05_Java25Features 第5题：Java 25新特性
+ * @see Question06_Java11Features 第6题：Java 11新特性
+ * @see Question07_Java17Features 第7题：Java 17新特性
+ * @see Question08_Java21Features 第8题：Java 21新特性
  * 
  * 运行要求：Java 8+
  */

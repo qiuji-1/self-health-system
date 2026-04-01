@@ -10,22 +10,22 @@ public class Question07_Reflection {
         System.out.println("=== 三种获取Class对象的方式 ===\n");
         
         // 方式1：类名.class
-        Class<Student> clazz1 = Student.class;
+        Class<Student07> clazz1 = Student07.class;
         System.out.println("方式1 - 类名.class: " + clazz1.getName());
         
         // 方式2：对象实例.getClass()
-        Student student = new Student("测试", 20);
+        Student07 student = new Student07("测试", 20);
         Class<?> clazz2 = student.getClass();
         System.out.println("方式2 - 对象.getClass(): " + clazz2.getName());
         
         // 方式3：Class.forName()
-        Class<?> clazz3 = Class.forName("Student");
+        Class<?> clazz3 = Class.forName("Student07");
         System.out.println("方式3 - Class.forName(): " + clazz3.getName());
         
         System.out.println("\n三种方式获取的是同一个Class对象: " + (clazz1 == clazz2 && clazz2 == clazz3));
         
         System.out.println("\n=== 获取类的基本信息 ===\n");
-        Class<?> clazz = Student.class;
+        Class<?> clazz = Student07.class;
         System.out.println("全限定名: " + clazz.getName());
         System.out.println("简单名称: " + clazz.getSimpleName());
         System.out.println("包名: " + clazz.getPackage().getName());
@@ -102,16 +102,16 @@ public class Question07_Reflection {
 /**
  * 学生类：用于演示反射
  */
-class Student {
+class Student07 {
     private String name;
     public int age;
     public static int count = 0;
     
-    public Student() {
+    public Student07() {
         count++;
     }
     
-    public Student(String name, int age) {
+    public Student07(String name, int age) {
         this.name = name;
         this.age = age;
         count++;
@@ -131,6 +131,6 @@ class Student {
     
     @Override
     public String toString() {
-        return "Student{name='" + name + "', age=" + age + "}";
+        return "Student07{name='" + name + "', age=" + age + "}";
     }
 }

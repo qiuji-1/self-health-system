@@ -126,18 +126,24 @@ sdk use java 21.0.1-tem
 
 ## 🔗 题目跳转
 
-每个Java文件顶部都有跳转链接，可以快速导航到其他题目：
+每个Java文件顶部都有跳转链接，使用JavaDoc标准的`@see`标签：
 
 ```java
 /**
  * 【题目跳转】
- * → [第1题：序列化](Question01_Serialization.java)
- * → [第2题：Java优势](Question02_JavaAdvantages.java)
+ * @see Question01_Serialization 第1题：序列化
+ * @see Question02_JavaAdvantages 第2题：Java优势
  * ...
  */
 ```
 
-在IDE中点击链接即可跳转到对应文件。
+**在IntelliJ IDEA中使用：**
+1. 按住 `Ctrl` 键，点击类名（如 `Question02_JavaAdvantages`）
+2. 即可跳转到对应的文件
+
+**在其他IDE中使用：**
+- Eclipse: 按住 `Ctrl` 点击
+- VS Code: 按住 `Ctrl` 点击（需要Java扩展插件）
 
 ## 📚 学习建议
 
