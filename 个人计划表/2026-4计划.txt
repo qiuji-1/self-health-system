@@ -27,11 +27,7 @@ https://mp.weixin.qq.com/s/1JetsTkFXRR2U-AYXDgxzg
 3、改一下idea里的测试代码的跳转部分
 
 20260401 周三
-
 1、看java面试题库
-
 2、改一下idea里的测试代码的跳转部分
-
 3、提交到Git
-
 4、体验创建一个子仓库
