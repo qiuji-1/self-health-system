@@ -75,6 +75,9 @@ application-prod.yml
 *.key
 *.pem
 
+# 配置目录
+config/
+
 # ===== 依赖目录 =====
 # Maven
 .mvn/
