@@ -31,3 +31,9 @@ https://mp.weixin.qq.com/s/1JetsTkFXRR2U-AYXDgxzg
 2、改一下idea里的测试代码的跳转部分
 3、提交到Git
 4、体验创建一个子仓库
+
+20260402
+1、训练营
+2、idea添加CodeBuddy插件
+3、看java面试题库
+4、调整文件夹内容，把大作业跟学习内容分开
