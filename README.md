@@ -19,7 +19,7 @@ source code/
 │   ├── view/              # Vue 前端项目
 │   └── sql/               # 数据库脚本
 ├── config/                 # 配置文件目录
-│   ├── .vscode/           # VS Code 配置
+│   ├── .vscode/           # VS Code 配置备份
 │   └── god key/           # 密钥配置
 ├── docs/                   # 文档目录
 │   ├── 对话记录/          # 工作日志和对话记录
@@ -28,6 +28,7 @@ source code/
 │   └── 个人计划表/        # 个人计划
 ├── temp/                   # 临时文件目录
 ├── .vscode/               # VS Code 项目配置
+├── .gitignore             # Git 忽略规则
 └── README.md              # 项目说明文档
 ```
 
@@ -86,4 +87,3 @@ mysql -u root -p < src/sql/health.sql
 
 杭州电子科技大学 信息工程学院 软件工程专业
 指导教师：陈鑫
-
