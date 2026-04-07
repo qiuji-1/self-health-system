@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * 项目启动类
+ * 项目启动类n
  */
 @MapperScan("com.kmbeast.mapper")
 @SpringBootApplication
