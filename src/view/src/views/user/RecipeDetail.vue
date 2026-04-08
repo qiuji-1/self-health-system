@@ -21,7 +21,7 @@
                 <FlowIndex :contentId="Number(id)" contentModule="RECIPE" />
             </div>
             <div>
-                <Evaluations :userId="userId" :avatar="avatar" contentType="HEALTH-NEWS" :contentId="Number(id)" />
+                <Evaluations :userId="userId" :avatar="avatar" contentType="RECIPE" :contentId="Number(id)" />
             </div>
         </div>
         <div class="right">
