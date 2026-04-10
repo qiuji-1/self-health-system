@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>图5-1 用户登录流程图</title>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<style>
+body { font-family: 'SimSun', 'Times New Roman', serif; padding: 20px; background: #fff; }
+.chart-container { background: white; padding: 15px; max-width: 520px; margin: 0 auto; border: 1px solid #ccc; }
+h2 { text-align: center; font-size: 15px; color: #000; margin-bottom: 10px; font-weight: bold; }
+.mermaid { display: flex; justify-content: center; }
+.mermaid svg { max-width: 500px !important; }
+</style>
+</head>
+<body>
+
+<div class="chart-container">
+  <h2>图5-1 用户登录流程图</h2>
+  <div class="mermaid">
+flowchart TD
+    A(["开始"]) --> B["输入账号+密码"]
+    B --> C{是否为空?}
+    C -->|是| D["提示不能为空"]
+    D --> B
+    C -->|否| E["双重MD5加密"]
+    E --> F["发送登录请求"]
+    F --> G{"密码<br/>验证"}
+    G -->|失败| H["返回错误"]
+    H --> B
+    G -->|成功| I["签发JWT Token"]
+    I --> J{判断角色}
+    J -->|"管理员"| K["跳转管理页"]
+    J -->|"普通用户"| L["跳转用户页"]
+  </div>
+</div>
+
+<script>
+mermaid.initialize({
+  startOnLoad: true,
+  theme: 'base',
+  themeVariables: {
+    primaryColor: '#fff', primaryBorderColor: '#000', primaryTextColor: '#000',
+    lineColor: '#000', secondaryColor: '#f5f5f5', tertiaryColor: '#fff',
+    fontSize: '13px', fontFamily: 'SimSun'
+  },
+  flowchart: {
+    useMaxWidth: false, htmlLabels: true, curve: 'linear',
+    nodeSpacing: 25, rankSpacing: 35, padding: 8, diagramPadding: 8
+  }
+});
+</script>
+</body>
+</html>

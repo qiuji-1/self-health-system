@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>图5-3 前端路由守卫权限控制流程图</title>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<style>
+body { font-family: 'SimSun', serif; padding: 20px; background: #fff; }
+.chart-container { background: white; padding: 15px; max-width: 520px; margin: 0 auto; border: 1px solid #ccc; }
+h2 { text-align: center; font-size: 15px; color: #000; margin-bottom: 10px; font-weight: bold; }
+.mermaid { display: flex; justify-content: center; }
+.mermaid svg { max-width: 500px !important; }
+</style>
+</head>
+<body>
+<div class="chart-container">
+<h2>图5-3 前端路由守卫权限控制流程图</h2>
+<div class="mermaid">
+flowchart TD
+    A["用户访问路由"] --> B{"路径是<br/>/login或/register?"}
+    B -->|是| C["直接放行 next()"]
+    C --> Z(["结束"])
+    B -->|否| D{"路由需要<br/>认证? requireAuth"}
+    D -->|否| E["放行 next()"]
+    E --> Z
+    D -->|是| F{Token<br/>是否存在?}
+    F -->|无| G["跳转登录页<br/>记录redirect目标"]
+    G --> Z
+    F -->|有| H{解析角色role}
+    H -->|"访问/admin<br/>但role≠1"| I["清除Token 跳转登录"]
+    I --> Z
+    H -->|"访问/user<br/>但role≠2"| I
+    H -->|角色匹配| J["放行 next()"]
+    J --> Z
+</div>
+</div>
+<script>
+mermaid.initialize({ startOnLoad: true, theme: 'base',
+  themeVariables: { primaryColor:'#fff',primaryBorderColor:'#000',primaryTextColor:'#000',lineColor:'#000',fontSize:'13px',fontFamily:'SimSun' },
+  flowchart: { useMaxWidth:false, htmlLabels:true, curve:'linear', nodeSpacing:22, rankSpacing:32, padding:8 } });
+</script>
+</body>
+</html>

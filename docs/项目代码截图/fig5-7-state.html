@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>图5-7 食谱审核状态流转图</title>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<style>
+body { font-family: 'SimSun', serif; padding: 20px; background: #fff; }
+.chart-container { background: white; padding: 15px; max-width: 480px; margin: 0 auto; border: 1px solid #ccc; }
+h2 { text-align: center; font-size: 15px; color: #000; margin-bottom: 10px; font-weight: bold; }
+.mermaid { display: flex; justify-content: center; }
+.mermaid svg { max-width: 460px !important; }
+</style>
+</head>
+<body>
+<div class="chart-container">
+<h2>图5-7 食谱审核状态流转图</h2>
+<div class="mermaid">
+stateDiagram-v2
+    [*] --> 待审核 : 用户提交食谱
+    待审核 --> 已发布 : 管理员审核通过
+    待审核 --> 已拒绝 : 管理员审核拒绝
+    已发布 --> 已下架 : 管理员执行下架
+    已下架 --> 已发布 : 重新上架
+    已拒绝 --> 待审核 : 用户修改重新提交
+    已发布 --> [*]
+    已下架 --> [*]
+    已拒绝 --> [*]
+</div>
+</div>
+<script>
+mermaid.initialize({ startOnLoad: true, theme: 'base',
+  themeVariables: { primaryColor:'#fff',primaryBorderColor:'#000',primaryTextColor:'#000',lineColor:'#000',fontSize:'13px',fontFamily:'SimSun' },
+  stateDiagram: { useMaxWidth:false, nodeSpacing: 25 } });
+</script>
+</body>
+</html>

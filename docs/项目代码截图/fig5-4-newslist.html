@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>图5-4 资讯列表加载流程图</title>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<style>
+body { font-family: 'SimSun', serif; padding: 20px; background: #fff; }
+.chart-container { background: white; padding: 15px; max-width: 520px; margin: 0 auto; border: 1px solid #ccc; }
+h2 { text-align: center; font-size: 15px; color: #000; margin-bottom: 10px; font-weight: bold; }
+.mermaid { display: flex; justify-content: center; }
+.mermaid svg { max-width: 500px !important; }
+</style>
+</head>
+<body>
+<div class="chart-container">
+<h2>图5-4 资讯列表加载流程图</h2>
+<div class="mermaid">
+flowchart TD
+    A(["开始"]) --> B["用户进入资讯页面"]
+    B --> C["构建查询参数<br/>分类+页码+pageSize"]
+    C --> D["POST /health-news/list<br/>发送分页查询请求"]
+    D --> E["后端@Pager自动分页<br/>返回List&lt;HealthNewsListVO&gt;"]
+    E --> F["v-for循环渲染卡片<br/>封面+标题+摘要"]
+    F --> G["el-pagination分页组件<br/>点击切换页码"]
+    G --> D
+</div>
+</div>
+<script>
+mermaid.initialize({ startOnLoad: true, theme: 'base',
+  themeVariables: { primaryColor:'#fff',primaryBorderColor:'#000',primaryTextColor:'#000',lineColor:'#000',fontSize:'13px',fontFamily:'SimSun' },
+  flowchart: { useMaxWidth:false, htmlLabels:true, curve:'linear', nodeSpacing:25, rankSpacing:35, padding:8 } });
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>图5-14 收藏夹功能示意图</title>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<style>
+body { font-family: 'SimSun', serif; padding: 20px; background: #fff; }
+.chart-container { background: white; padding: 15px; max-width: 520px; margin: 0 auto; border: 1px solid #ccc; }
+h2 { text-align: center; font-size: 15px; color: #000; margin-bottom: 10px; font-weight: bold; }
+.mermaid { display: flex; justify-content: center; }
+.mermaid svg { max-width: 500px !important; }
+</style>
+</head>
+<body>
+<div class="chart-container">
+<h2>图5-14 收藏夹功能示意图</h2>
+<div class="mermaid">
+flowchart TD
+    A(["开始"]) --> B["用户进入收藏夹页面"]
+    B --> C{"选择Tab分类"}
+    C -->|"Tab1:<br/>收藏的资讯"| D["GET /health-news/collectionList<br/>加载收藏的资讯列表"]
+    C -->|"Tab2:<br/>收藏的食谱"| E["GET /recipe/collectionList<br/>加载收藏的食谱列表"]
+    D --> F["渲染卡片列表<br/>缩略图+标题+取消收藏按钮"]
+    E --> F
+    F --> G{"用户操作"}
+    G -->|"点击×<br/>取消收藏"| H["调用取消收藏接口<br/>从列表中移除"]
+    H --> F
+    G -->|"点击卡片<br/>查看详情"| I["跳转对应详情页"]
+    I --> J(["结束"])
+</div>
+</div>
+<script>
+mermaid.initialize({ startOnLoad: true, theme: 'base',
+  themeVariables: { primaryColor:'#fff',primaryBorderColor:'#000',primaryTextColor:'#000',lineColor:'#000',fontSize:'13px',fontFamily:'SimSun' },
+  flowchart: { useMaxWidth:false, htmlLabels:true, curve:'linear', nodeSpacing:22, rankSpacing:32, padding:8 } });
+</script>
+</body>
+</html>

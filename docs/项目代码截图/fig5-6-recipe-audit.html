@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>图5-6 食谱发布与审核流程图</title>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<style>
+body { font-family: 'SimSun', serif; padding: 20px; background: #fff; }
+.chart-container { background: white; padding: 15px; max-width: 520px; margin: 0 auto; border: 1px solid #ccc; }
+h2 { text-align: center; font-size: 15px; color: #000; margin-bottom: 10px; font-weight: bold; }
+.mermaid { display: flex; justify-content: center; }
+.mermaid svg { max-width: 500px !important; }
+</style>
+</head>
+<body>
+<div class="chart-container">
+<h2>图5-6 食谱发布与审核流程图</h2>
+<div class="mermaid">
+flowchart TD
+    A(["开始"]) --> B["用户填写食谱信息<br/>名称/食材/制作步骤/封面"]
+    B --> C["POST /recipe/save<br/>提交食谱数据"]
+    C --> D["后端保存 status=待审核"]
+    D --> E["等待管理员审核"]
+    E --> F{审核结果}
+    F -->|通过| G["status→已发布<br/>前端可见"]
+    F -->|拒绝| H["status→已拒绝<br/>附拒绝原因提示"]
+    G --> I(["结束"])
+    H --> I
+</div>
+</div>
+<script>
+mermaid.initialize({ startOnLoad: true, theme: 'base',
+  themeVariables: { primaryColor:'#fff',primaryBorderColor:'#000',primaryTextColor:'#000',lineColor:'#000',fontSize:'13px',fontFamily:'SimSun' },
+  flowchart: { useMaxWidth:false, htmlLabels:true, curve:'linear', nodeSpacing:25, rankSpacing:35, padding:8 } });
+</script>
+</body>
+</html>
