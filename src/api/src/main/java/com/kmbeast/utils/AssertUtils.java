@@ -37,7 +37,6 @@ public class AssertUtils {
      *
      * @param expression 布尔表达式
      * @param message    错误信息
-     * @author B站->「程序员 辰星」原创出品
      */
     public static void isTrue(boolean expression, String message) {
         if (!expression) {
